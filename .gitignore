@@ -1,5 +1,6 @@
 # project pdf is secret
 *.pdf
+*.md
 
 # Prerequisites
 *.d
