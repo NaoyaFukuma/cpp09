@@ -2,7 +2,7 @@ NAME = btc
 
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -MP
-CPPFLAGS = -Iincludes
+CPPFLAGS =
 LDFLAGS =
 
 SRCS = main.cpp
@@ -16,13 +16,9 @@ all: $(NAME)
 
 -include $(DEPENDS)
 
+debug: CXXFLAGS += -DDEBUG -g -fsanitize=address -fsanitize=undefined -fsanitize=leak -DUNIT_TEST
 debug: LDFLAGS += -fsanitize=address -fsanitize=undefined -fsanitize=leak
-debug: CXXFLAGS += -DDEBUG -g -fsanitize=address -fsanitize=undefined -fsanitize=leak
 debug: fclean all
-	./btc
-
-unit-test: CXXFLAGS += -DUNIT_TEST
-unit-test: fclean all
 	./btc
 
 $(NAME): $(OBJSDIR) $(OBJS)
