@@ -2,6 +2,9 @@
 *.pdf
 *.md
 
+# .csv files
+*.csv
+
 # Prerequisites
 *.d
 
