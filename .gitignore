@@ -1,9 +1,13 @@
+# test files
+test_*
+
 # project pdf is secret
 *.pdf
 *.md
 
 # .csv files
 *.csv
+
 
 # Prerequisites
 *.d
