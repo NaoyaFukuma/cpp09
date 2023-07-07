@@ -5,7 +5,6 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -MP
 LDFLAGS =
 
 SRCS = main.cpp BitcoinExchange.cpp ExchangeRateReader.cpp
-VPATH = srcs
 
 OBJSDIR = objs
 OBJS = $(addprefix $(OBJSDIR)/, $(SRCS:%.cpp=%.o))
