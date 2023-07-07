@@ -2,10 +2,9 @@ NAME = btc
 
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -MP
-CPPFLAGS =
 LDFLAGS =
 
-SRCS = main.cpp
+SRCS = main.cpp BitcoinExchange.cpp ExchangeRateReader.cpp
 VPATH = srcs
 
 OBJSDIR = objs
@@ -19,7 +18,7 @@ all: $(NAME)
 debug: CXXFLAGS += -DDEBUG -g -fsanitize=address -fsanitize=undefined -fsanitize=leak -DUNIT_TEST
 debug: LDFLAGS += -fsanitize=address -fsanitize=undefined -fsanitize=leak
 debug: fclean all
-	./btc
+	./btc input_files/input00.txt
 
 $(NAME): $(OBJSDIR) $(OBJS)
 	$(CXX) $(LDFLAGS) -o $(NAME) $(OBJS)
