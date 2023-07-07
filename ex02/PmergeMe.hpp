@@ -12,8 +12,13 @@ public:
 
 private:
     std::vector<int> data_;
+
     template <typename Container>
     Container mergeInsertSort(Container input);
+
+    template <typename Container>
+    void insertionSort(Container& arr, int begin, int end);
+
     template <typename Container>
     double measureTime(Container container);
     double measureTimeStdSort(std::vector<int> container);
